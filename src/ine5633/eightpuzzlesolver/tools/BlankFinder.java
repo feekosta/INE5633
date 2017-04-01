@@ -1,6 +1,6 @@
-package ine5633.tools;
+package ine5633.eightpuzzlesolver.tools;
 
-import ine5633.Coordinate;
+import ine5633.eightpuzzlesolver.Coordinate;
 
 /**
  * Classe utilizada para descobrir a posição que está vazia, dado um tabuleiro
@@ -9,6 +9,10 @@ import ine5633.Coordinate;
  */
 public class BlankFinder {
 
+	public BlankFinder() throws InstantiationException {
+		throw new InstantiationException("Instances of this type are forbidden.");
+	}
+	
 	public static Coordinate find(Integer [][] state){
 		for(int row = 0; row < state.length; row ++){
 			for(int column = 0; column < state[row].length; column++){

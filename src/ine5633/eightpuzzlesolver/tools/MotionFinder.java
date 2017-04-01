@@ -1,16 +1,21 @@
-package ine5633.tools;
+package ine5633.eightpuzzlesolver.tools;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ine5633.Coordinate;
+import ine5633.eightpuzzlesolver.Coordinate;
 
 /**
  * Classe usada para descobrir os movimentos possiveis no tabuleiro
+ * Test class: {@link MotionFinderTest}
  * @author feekosta
  */
 public class MotionFinder {
 
+	public MotionFinder() throws InstantiationException {
+		throw new InstantiationException("Instances of this type are forbidden.");
+	}
+	
 	public static List<Coordinate> find(Coordinate coordinate){
 		List<Coordinate> coordinates = build(coordinate);
 		return filter(coordinates);
@@ -33,13 +38,6 @@ public class MotionFinder {
 			}
 		}
 		return coordinates;
-	}
-	
-	public static void main(String[] args) {
-		
-		new MotionFinder();
-		List<Coordinate> find = MotionFinder.find(new Coordinate(2, 2));
-		System.out.println(find.toString());
 	}
 	
 }

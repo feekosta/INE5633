@@ -1,4 +1,4 @@
-package ine5633;
+package ine5633.eightpuzzlesolver;
 
 import java.util.List;
 
