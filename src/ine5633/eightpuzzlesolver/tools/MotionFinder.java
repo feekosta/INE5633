@@ -3,12 +3,12 @@ package ine5633.eightpuzzlesolver.tools;
 import java.util.ArrayList;
 import java.util.List;
 
-import ine5633.eightpuzzlesolver.Coordinate;
+import ine5633.eightpuzzlesolver.model.Coordinate;
 
 /**
- * Classe usada para descobrir os movimentos possiveis no tabuleiro
- * Test class: {@link MotionFinderTest}
- * @author feekosta
+ * Class used to discover possible moves on the board
+ * <br>Test class: {@link MotionFinderTest}
+ * <br>@author feekosta
  */
 public class MotionFinder {
 
@@ -17,10 +17,14 @@ public class MotionFinder {
 	}
 	
 	public static List<Coordinate> find(Coordinate coordinate){
-		List<Coordinate> coordinates = build(coordinate);
-		return filter(coordinates);
+		return filter(build(coordinate));
 	}
 
+	/**
+	 * Produces all possible coordinates for an empty position
+	 * @param coordinate
+	 * @return
+	 */
 	private static List<Coordinate> build(Coordinate coordinate) {
 		List<Coordinate> coordinates = new ArrayList<>();
 		coordinates.add(new Coordinate(coordinate.getX()-1, coordinate.getY()));
@@ -30,6 +34,11 @@ public class MotionFinder {
 		return coordinates;
 	}
 	
+	/**
+	 * Return valid coordinates
+	 * @param coordinatesToFilter
+	 * @return
+	 */
 	private static List<Coordinate> filter(List<Coordinate> coordinatesToFilter) {
 		List<Coordinate> coordinates = new ArrayList<>();
 		for (Coordinate coordinate : coordinatesToFilter) {

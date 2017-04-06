@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import ine5633.eightpuzzlesolver.Coordinate;
+import ine5633.eightpuzzlesolver.model.Coordinate;
 
 public class BlankFinderTest extends AbstractInstantiationTest{
 	

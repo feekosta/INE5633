@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import ine5633.eightpuzzlesolver.Coordinate;
+import ine5633.eightpuzzlesolver.model.Coordinate;
 
 public class MotionFinderTest extends AbstractInstantiationTest{
 	
