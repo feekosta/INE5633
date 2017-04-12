@@ -36,8 +36,8 @@ public class ChildNodesBuilder {
 		return new Node.Builder(state)
 			.level(node.getLevel()+1)
 			.father(node)
-			//.score(HeuristicCalculator.blocksOutOfPlace(integers, objective))
-			//.score(HeuristicCalculator.manhattanDistance(integers, objective))
+			//.score(HeuristicCalculator.blocksOutOfPlace(state, objective))
+			//.score(HeuristicCalculator.manhattanDistance(state, objective))
 			.score(HeuristicCalculator.manhattanDistance(state, objective)+HeuristicCalculator.blocksOutOfPlace(state, objective))
 			.build();
 	}

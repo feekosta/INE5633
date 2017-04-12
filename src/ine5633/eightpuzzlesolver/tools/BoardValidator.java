@@ -14,16 +14,17 @@ public class BoardValidator {
 	}
 	
 	public static Boolean validate(Integer [][] tiles){
+		Integer totalInversions = 0;
 		for(int row = 0; row < Coordinate.MAX; row++){
 			for(int column = 0; column < Coordinate.MAX; column++){
 				Integer currentValue = tiles[row][column];
 				if(currentValue != null){
-					Integer verifyInversions = verifyInversions(currentValue, new Coordinate(row, column), tiles);
-					if(Math.floorMod(verifyInversions, 2) != 0){
-						return false;
-					}
+					totalInversions += calculeInversions(currentValue, new Coordinate(row, column), tiles);
 				}
 			}
+		}
+		if(Math.floorMod(totalInversions, 2) != 0){
+			return false;
 		}
 		return true;
 	}
@@ -36,7 +37,7 @@ public class BoardValidator {
 	 * @param tiles
 	 * @return
 	 */
-	private static Integer verifyInversions(Integer currentValue, Coordinate coordinate, Integer[][] tiles) {
+	private static Integer calculeInversions(Integer currentValue, Coordinate coordinate, Integer[][] tiles) {
 		Integer inversions = 0;
 		for(int x = 0; x < Coordinate.MAX; x++){
 			for(int y = 0; y < Coordinate.MAX; y++){
